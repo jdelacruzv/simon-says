@@ -1,0 +1,139 @@
+body {
+    background-color: rgba(30, 30, 30, 0.9);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh; 
+}
+
+header {
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+h1 {
+    margin: 0 0 0 10px;
+}
+
+h2 {
+    margin: 20px auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.btn-about {
+    background-color: #47a386;
+    border: 1px solid #47a386;
+    border-radius: 5px;
+    color: #ffffff;
+    width: 80px;
+    padding: 5px;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    /* Elimina resplandor cuando recibe el focus */
+    outline: none;
+}
+
+.board {
+    background-color: greenyellow;
+    width: 100vh;
+    height: calc(100vh - 50px);
+    margin: 70px auto 0 auto;
+    border-radius: 50%;
+    max-width: 60vh;
+    max-height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.position {
+    width: 50%;
+    height: 50%;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow.soft{
+    background-color: rgba(236, 236, 45, 0.561);
+}
+
+.blue.soft{
+    background-color: rgba(69, 69, 236, 0.589);
+}
+
+.red.soft{
+    background-color: rgba(231, 90, 90, 0.63);
+}
+
+.green.soft{
+    background-color: rgba(95, 230, 95, 0.637);
+}
+
+.btn-start {
+    width: 100vh;
+    height: 80px;
+    max-width: 50vh;
+    max-height: 50vh;    
+    font-size: 2rem;
+    border-radius: 10px;
+    background-color: indigo;
+    color: #ffffff;
+    box-shadow: #ffffff 1px 1px 10px;
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 25vh);
+    cursor: pointer;
+}
+
+/* .btn-start {
+    position: absolute;
+    width: 400px;
+    height: 80px;
+    font-size: 2rem;
+    border-radius: 10px;
+    background-color: indigo;
+    color: white;
+    box-shadow: white 1px 1px 10px;
+    top: calc(50% - 40px);  
+    left: calc(50% - 200px);
+} */
+
+.hide {
+    display: none;
+}
+
+.increase {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 375px) {
+    .board {
+        max-width: 50vh;
+        max-height: 50vh;
+    }
+
+    .btn-start {
+        height: 60px;
+    }
+}
