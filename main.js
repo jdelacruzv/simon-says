@@ -30,6 +30,7 @@ class Game {
 
     // Inicializa el juego
     initializeGame() {     
+        // Lograr que this apunte al juego (clase Game) y no al DOM
         this.nextLevel = this.nextLevel.bind(this)
         this.changeStartButton()
         this.colors = {yellow, blue, red, green}
@@ -46,8 +47,10 @@ class Game {
     // Muestra u oculta el botón de empezar juego 
     changeStartButton() {
         if(btn_start.classList.contains("hide")) {
+            // Muestra el botón
             btn_start.classList.remove("hide")
         } else {
+            // Oculta el botón
             btn_start.classList.add("hide")
         }
     }
@@ -58,12 +61,14 @@ class Game {
     }
 
     // Crea e inicializa un array de 10 elementos y los llenas de ceros
-    // fill() inicializa el array con ceros: [0,0,0,0,0,0,0,0,0,0]
+    // fill() inicializa el array con ceros: [0,0,0,0,0,0,0,0,0,0] y map() los recorre
     globalSequence() {
         this.sequence = new Array(MAX_LEVEL).fill(0).map(this.numericSequence)
     }
 
+    // Siguiente nivel
     nextLevel() {
+        // Lograr que this apunte al juego (clase Game) y no al DOM
         this.chosenColor = this.chosenColor.bind(this)
         this.iluminateSequence()
         this.addClickEvents()
@@ -110,8 +115,8 @@ class Game {
 
     // Ilumina el color y da sonido segun el orden aleatorio
     iluminateColor(color) {
-        const sound_color = this.convertColorToNumber(color)
         this.colors[color].classList.add("soft", "increase")
+        const sound_color = this.convertColorToNumber(color)
         this.sounds[sound_color].play()
         setTimeout(() => this.turnOffColor(color), 500)
     }
@@ -121,27 +126,27 @@ class Game {
         this.colors[color].classList.remove("soft", "increase")
     }
 
-    // Agrega el evento click
+    // Agrega evento click
     addClickEvents() {
         // const self = this
         // const _this = this
-        this.colors.yellow.addEventListener('click',this.chosenColor)
-        this.colors.blue.addEventListener('click',this.chosenColor)
-        this.colors.red.addEventListener('click',this.chosenColor)
-        this.colors.green.addEventListener('click',this.chosenColor)
+        this.colors.yellow.addEventListener('click', this.chosenColor)
+        this.colors.blue.addEventListener('click', this.chosenColor)
+        this.colors.red.addEventListener('click', this.chosenColor)
+        this.colors.green.addEventListener('click', this.chosenColor)
     }
 
-    // Remueve el evento click
+    // Remueve evento click
     removeClickEvents() {
-        this.colors.yellow.removeEventListener('click',this.chosenColor)
-        this.colors.blue.removeEventListener('click',this.chosenColor)
-        this.colors.red.removeEventListener('click',this.chosenColor)
-        this.colors.green.removeEventListener('click',this.chosenColor)
+        this.colors.yellow.removeEventListener('click', this.chosenColor)
+        this.colors.blue.removeEventListener('click', this.chosenColor)
+        this.colors.red.removeEventListener('click', this.chosenColor)
+        this.colors.green.removeEventListener('click', this.chosenColor)
     }
 
     // Elige el color
-    chosenColor(even) {
-        const color_name = even.target.dataset.color
+    chosenColor(event) {
+        const color_name = event.target.dataset.color
         const color_number = this.convertColorToNumber(color_name)
         this.iluminateColor(color_name)
         if(color_number === this.sequence[this.sublevel]) {
@@ -162,25 +167,29 @@ class Game {
 
     // Muestra ventana ganador
     gameWon() {
-        swal("Simon says:", "Felicidades, ganastes el juego...!!!", "success")
+        swal("Ganastes el juego", "Felicidades...que gran memoria tienes !!!", "success")
+        // Devuelve una promesa
         .then(() => {
             this.removeClickEvents()
             this.initializeGame()
-            count = 1
-            counter.innerText = 0
+            resetLevelCounter()
         })
     }
 
     // Muestra ventana perdedor
     gameLoss() {
-        swal("Simon says:", "Lo sentimos, perdiste el juego... vuelve a intentarlo!!!", "error")
+        swal("Perdiste el juego", "Lo sentimos...vuelve a intentarlo !!!", "error")
         .then(() => {
             this.removeClickEvents()
             this.initializeGame()
-            count = 1
-            counter.innerText = 0
+            resetLevelCounter()
         })
     }
+}
+
+function resetLevelCounter() {
+    count = 1
+    counter.innerText = 0
 }
 
 // Muestra ventana acerca de

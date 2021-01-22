@@ -10,7 +10,7 @@
 <body>
     <header>
         <h1>Simon says</h1>
-        <button id="about" class="btn-about" onclick="about()">About</button> 
+        <button class="btn-about" onclick="about()">About</button> 
     </header>
 
     <h2>Level: <span id="level">0</span></h2>
@@ -20,9 +20,8 @@
         <div id="blue" class="position blue" data-color="blue"></div>
         <div id="red" class="position red" data-color="red"></div>
         <div id="green" class="position green" data-color="green"></div>
-    
+        <button id="btn-start" class="btn-start" onclick="startPlaying()">Start game</button>
     </div>
-    <button id="btn-start" class="btn-start" onclick="startPlaying()">Start game</button>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="main.js"></script>

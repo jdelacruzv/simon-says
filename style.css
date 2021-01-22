@@ -1,11 +1,12 @@
 body {
-    background-color: rgba(30, 30, 30, 0.9);
     margin: 0;
     padding: 0;
+    background-color: rgba(30, 30, 30, 0.9);
     width: 100%;
     height: 100vh; 
 }
 
+/* ------------------- HEADER ------------------- */
 header {
     height: 50px;
     display: flex;
@@ -21,7 +22,7 @@ h1 {
 }
 
 h2 {
-    margin: 20px auto;
+    margin: 1.5rem auto 2rem auto;
     text-align: center;
     color: #ffffff;
 }
@@ -39,18 +40,19 @@ h2 {
     outline: none;
 }
 
+/* ------------------- BOARD ------------------- */
 .board {
     background-color: greenyellow;
-    width: 100vh;
-    height: calc(100vh - 50px);
-    margin: 70px auto 0 auto;
+    width: 70vh;
+    height: 70vh;
+    margin: 0 auto;
     border-radius: 50%;
-    max-width: 60vh;
-    max-height: 60vh;
     display: flex;
     flex-wrap: wrap;
+    /* Todo lo que se desborde lo oculta */
     overflow: hidden;
-    cursor: pointer;
+    position: relative;
+    /* cursor: pointer; */
 }
 
 .position {
@@ -91,33 +93,18 @@ h2 {
 }
 
 .btn-start {
-    width: 100vh;
+    width: 50vh;
     height: 80px;
-    max-width: 50vh;
-    max-height: 50vh;    
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 25vh);
     font-size: 2rem;
     border-radius: 10px;
     background-color: indigo;
     color: #ffffff;
     box-shadow: #ffffff 1px 1px 10px;
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 25vh);
     cursor: pointer;
 }
-
-/* .btn-start {
-    position: absolute;
-    width: 400px;
-    height: 80px;
-    font-size: 2rem;
-    border-radius: 10px;
-    background-color: indigo;
-    color: white;
-    box-shadow: white 1px 1px 10px;
-    top: calc(50% - 40px);  
-    left: calc(50% - 200px);
-} */
 
 .hide {
     display: none;
@@ -127,13 +114,52 @@ h2 {
     transform: scale(1.05);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 460px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
     .board {
-        max-width: 50vh;
-        max-height: 50vh;
+        width: 60vh;
+        height: 60vh;
+    }
+
+    .position {
+        width: 50%;
+        height: 50%;
     }
 
     .btn-start {
+        width: 40vh;
         height: 60px;
+        position: absolute;
+        top: calc(50% - 30px);
+        left: calc(50% - 20vh);
+        font-size: 1.6rem;       
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .board {
+        width: 55vh;
+        height: 55vh;
+    }
+
+    .position {
+        width: 50%;
+        height: 50%;
+    }
+
+    .btn-start {
+        width: 40vh;
+        height: 50px;
+        position: absolute;
+        top: calc(50% - 25px);
+        left: calc(50% - 20vh);
+        font-size: 1.3rem;       
     }
 }
