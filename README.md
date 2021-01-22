@@ -1,2 +1,2 @@
 # simon-says
-Juego simon says
+Juego de memoria simon says
