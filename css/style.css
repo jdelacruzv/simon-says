@@ -115,7 +115,7 @@ h2 {
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 570px) {
     h1 {
         font-size: 1.5rem;
     }
@@ -144,7 +144,7 @@ h2 {
     }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 460px) {
     .board {
         width: 50vh;
         height: 50vh;
@@ -157,19 +157,15 @@ h2 {
 
     .btn-start {
         width: 30vh;
-        height: 40px;
+        height: 50px;
         position: absolute;
-        top: calc(50% - 20px);
+        top: calc(50% - 25px);
         left: calc(50% - 15vh);
-        font-size: 1.3rem;       
+        font-size: 1.4rem;       
     }
 }
 
-@media screen and (max-width: 280px) {
-    h1 {
-        font-size: 1.3rem;
-    }
-
+@media screen and (max-width: 380px) {
     .board {
         width: 40vh;
         height: 40vh;
@@ -187,5 +183,30 @@ h2 {
         top: calc(50% - 15px);
         left: calc(50% - 10vh);
         font-size: 1rem;       
+    }
+}
+
+@media screen and (max-width: 300px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .board {
+        width: 30vh;
+        height: 30vh;
+    }
+
+    .position {
+        width: 50%;
+        height: 50%;
+    }
+
+    .btn-start {
+        width: 20vh;
+        height: 30px;
+        position: absolute;
+        top: calc(50% - 15px);
+        left: calc(50% - 10vh);
+        font-size: 0.8rem;       
     }
 }
