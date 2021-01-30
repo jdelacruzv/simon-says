@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../assets/fondo.svg);
+    background-image: url(../assets/background.svg);
     background-size: cover;
     background-repeat:no-repeat;
     width: 100%;

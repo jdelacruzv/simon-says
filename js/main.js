@@ -1,3 +1,4 @@
+/* Variables del juego */
 const btn_start = document.getElementById("btn-start")
 const counter = document.getElementById("level")
 
@@ -9,6 +10,7 @@ const green = document.getElementById("green")
 const MAX_LEVEL = 2
 let count = 1
 
+/* Clase principal del juego */
 class Game {
     constructor() {
         this.initializeGame()
@@ -187,12 +189,13 @@ class Game {
     }
 }
 
+/* Reinicia el contador de nivel */
 function resetLevelCounter() {
     count = 1
     counter.innerText = 0
 }
 
-// Muestra ventana acerca de
+/* Muestra ventana acerca de */
 function about() {
     swal({
         title: "José De La Cruz",
@@ -201,7 +204,7 @@ function about() {
     })
 }
 
-// Botón empezar juego que llama a la clase Game 
+/* Botón empezar juego que llama a la clase Game */
 function startPlaying() {
     window.game = new Game()
 }
