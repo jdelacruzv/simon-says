@@ -7,7 +7,7 @@ const blue = document.getElementById("blue")
 const red = document.getElementById("red")
 const green = document.getElementById("green")
 
-const MAX_LEVEL = 2
+const MAX_LEVEL = 10
 let count = 1
 
 /* Clase principal del juego */

@@ -136,8 +136,8 @@ h2 {
     }
 
     .board {
-        width: 65vh;
-        height: 65vh;
+        width: 55vh;
+        height: 55vh;
     }
 
     .position {
@@ -157,8 +157,8 @@ h2 {
 
 @media screen and (max-width: 380px) {
     .board {
-        width: 60vh;
-        height: 60vh;
+        width: 50vh;
+        height: 50vh;
     }
 
     .position {
@@ -172,7 +172,7 @@ h2 {
         position: absolute;
         top: calc(50% - 27px);
         left: calc(50% - 17vh);
-        font-size: 1.3rem;       
+        font-size: 1.2rem;       
     }
 }
 
@@ -182,8 +182,8 @@ h2 {
     }
     
     .board {
-        width: 50vh;
-        height: 50vh;
+        width: 45vh;
+        height: 45vh;
     }
 
     .position {
@@ -197,6 +197,6 @@ h2 {
         position: absolute;
         top: calc(50% - 19px);
         left: calc(50% - 14vh);
-        font-size: 1rem;       
+        font-size: 0.8rem;       
     }
 }
