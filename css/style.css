@@ -1,7 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgba(30, 30, 30, 0.9);
+    background-image: url("/assets/fondo.svg");
+    background-size: cover;
+    background-repeat:no-repeat;
     width: 100%;
     height: 100vh; 
 }
@@ -14,7 +16,7 @@ header {
     justify-content: space-between;
     align-items: center;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #092cd1;
 }
 
 h1 {
@@ -25,16 +27,21 @@ h2 {
     margin: 1.5rem auto 2rem auto;
     text-align: center;
     color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .btn-about {
-    background-color: #47a386;
-    border: 1px solid #47a386;
+    background-color: indigo;
+    border: 1px solid indigo;
+    box-shadow: #ffffff 0px 0px 5px;
     border-radius: 5px;
     color: #ffffff;
-    width: 80px;
-    padding: 5px;
+    width: 90px;
+    padding: 6px;
     margin: 0 10px 0 0;
+    font-size: 0.8rem;
+    font-weight: 900;
     cursor: pointer;
     /* Elimina resplandor cuando recibe el focus */
     outline: none;
@@ -115,18 +122,22 @@ h2 {
 }
 
 /* ------------------- MEDIA QUERY ------------------- */
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 460px) {
     h1 {
         font-size: 1.5rem;
     }
 
     h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+    }
+
+    .btn-about {
+        font-size: 0.7rem;
     }
 
     .board {
-        width: 60vh;
-        height: 60vh;
+        width: 65vh;
+        height: 65vh;
     }
 
     .position {
@@ -140,11 +151,36 @@ h2 {
         position: absolute;
         top: calc(50% - 30px);
         left: calc(50% - 20vh);
-        font-size: 1.6rem;       
+        font-size: 1.5rem;       
     }
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 380px) {
+    .board {
+        width: 60vh;
+        height: 60vh;
+    }
+
+    .position {
+        width: 50%;
+        height: 50%;
+    }
+
+    .btn-start {
+        width: 34vh;
+        height: 54px;
+        position: absolute;
+        top: calc(50% - 27px);
+        left: calc(50% - 17vh);
+        font-size: 1.3rem;       
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .btn-about {
+        font-size: 0.7rem;
+    }
+    
     .board {
         width: 50vh;
         height: 50vh;
@@ -156,57 +192,11 @@ h2 {
     }
 
     .btn-start {
-        width: 30vh;
-        height: 50px;
+        width: 28vh;
+        height: 38px;
         position: absolute;
-        top: calc(50% - 25px);
-        left: calc(50% - 15vh);
-        font-size: 1.4rem;       
-    }
-}
-
-@media screen and (max-width: 380px) {
-    .board {
-        width: 40vh;
-        height: 40vh;
-    }
-
-    .position {
-        width: 50%;
-        height: 50%;
-    }
-
-    .btn-start {
-        width: 20vh;
-        height: 30px;
-        position: absolute;
-        top: calc(50% - 15px);
-        left: calc(50% - 10vh);
+        top: calc(50% - 19px);
+        left: calc(50% - 14vh);
         font-size: 1rem;       
-    }
-}
-
-@media screen and (max-width: 300px) {
-    h1 {
-        font-size: 1.3rem;
-    }
-
-    .board {
-        width: 30vh;
-        height: 30vh;
-    }
-
-    .position {
-        width: 50%;
-        height: 50%;
-    }
-
-    .btn-start {
-        width: 20vh;
-        height: 30px;
-        position: absolute;
-        top: calc(50% - 15px);
-        left: calc(50% - 10vh);
-        font-size: 0.8rem;       
     }
 }

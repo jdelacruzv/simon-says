@@ -6,7 +6,7 @@ const blue = document.getElementById("blue")
 const red = document.getElementById("red")
 const green = document.getElementById("green")
 
-const MAX_LEVEL = 10
+const MAX_LEVEL = 2
 let count = 1
 
 class Game {
@@ -167,7 +167,7 @@ class Game {
 
     // Muestra ventana ganador
     gameWon() {
-        swal("Ganastes el juego", "Felicidades...que gran memoria tienes !!!", "success")
+        swal("Ganastes el juego", "Felicidades, tienes buena memoria", "success")
         // Devuelve una promesa
         .then(() => {
             this.removeClickEvents()
@@ -178,7 +178,7 @@ class Game {
 
     // Muestra ventana perdedor
     gameLoss() {
-        swal("Perdiste el juego", "Lo sentimos...vuelve a intentarlo !!!", "error")
+        swal("Perdiste el juego", "Lo sentimos, vuelve a intentarlo", "error")
         .then(() => {
             this.removeClickEvents()
             this.initializeGame()
