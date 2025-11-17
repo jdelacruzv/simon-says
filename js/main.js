@@ -199,7 +199,7 @@ function resetLevelCounter() {
 function about() {
   swal({
     title: "José De La Cruz",
-    text: "Desarrollador Web Front End",
+    text: "Desarrollador de Software",
     icon: "info",
   })
 }
