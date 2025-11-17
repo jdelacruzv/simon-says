@@ -198,7 +198,7 @@ function resetLevelCounter() {
 /* Muestra ventana acerca de */
 function about() {
   swal({
-    title: "José De La Cruz",
+    title: "Jose De La Cruz",
     text: "Desarrollador de Software",
     icon: "info",
   })
