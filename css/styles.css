@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   padding: 0;
@@ -6,47 +9,45 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-}
-/* ------------------- HEADER ------------------- */
-header {
-  height: 50px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+}
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+  width: 100%;
+  margin: 0;
+  font-size: clamp(1.5rem, 10vw, 2.5rem);
   color: #ffffff;
-  background-color: #092cd1;
+  text-align: center;
 }
-h1 {
-  margin: 0 0 0 10px;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* centrar verticalmente respecto al viewport sin tocar el body */
+  min-height: calc(100vh - 140px);
 }
-h2 {
+.level {
   margin: 1.5rem auto 2rem auto;
   text-align: center;
   color: #ffffff;
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: bold;
 }
-.btn-about {
-  background-color: indigo;
-  border: 1px solid indigo;
-  box-shadow: #ffffff 0px 0px 5px;
-  border-radius: 5px;
-  color: #ffffff;
-  width: 90px;
-  padding: 6px;
-  margin: 0 10px 0 0;
-  font-size: 0.8rem;
-  font-weight: 900;
-  cursor: pointer;
-  outline: none;
-}
-/* ------------------- BOARD ------------------- */
 .board {
   background-color: greenyellow;
   width: clamp(40vh, 90vw, 70vh);
   height: clamp(40vh, 90vw, 70vh);
-  margin: auto;
   border-radius: 50%;
   display: flex;
   flex-wrap: wrap;
@@ -98,13 +99,40 @@ h2 {
   cursor: pointer;
   font-weight: bold;
 }
+.btn-start:hover {
+  background-color: rgb(53, 16, 80);
+}
 .hide {
   display: none;
 }
 .increase {
   transform: scale(1.05);
 }
-/* ------------------- MEDIA QUERY ------------------- */
+.footer {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btn-about {
+  background-color: indigo;
+  border: 1px solid indigo;
+  box-shadow: #ffffff 0px 0px 5px;
+  border-radius: 5px;
+  color: #ffffff;
+  width: 120px;
+  padding: .8rem 2rem;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+.btn-about:hover {
+  transform: scale(1.05);
+}
 @media screen and (max-width: 480px) {
   .board {
     width: clamp(35vh, 85vw, 55vh);
@@ -124,7 +152,7 @@ h2 {
   }
 }
 @media screen and (max-width: 330px) {
-  h2 {
+  .level {
     font-size: clamp(1rem, 3vw, 1.5rem);
   }
   .board {
